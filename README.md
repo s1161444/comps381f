@@ -1,2 +1,2 @@
 # comps381f
-comps381f project
+This is a Comps381f mini-project.
