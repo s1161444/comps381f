@@ -1,0 +1,66 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Restaurant</title>
+          <link rel="stylesheet" href="css/style5.css">
+</head>
+
+<body>
+
+  <div class="header"><h1 class="header_logo">Restaurant Collections</h1></div>
+  <div class="login-page">
+  <div class="form">
+
+    <font size="5" color="ff9900"><p><b>Hello ! <%=username%></b></p></font>
+
+    <form action="/logout" class="login-form">
+        <button>logout</button>
+    </form>
+
+    <font size="5" color="ff9900"><b>_______________________</b></font><br><br>
+    <font size="5" color="ff9900"><b>Find Your Restaurant</b></font>
+
+    <br><br><br>
+
+    <form action="/list" method="get">
+            <input type="text" name="keyword" placeholder="Keyword" /><br>
+          
+            <select name="criteria">
+                <option value="name">Name</option>
+                <option value="borough">Borough</option>
+                <option value="cuisine">Cuisine</option>
+            </select>
+
+            <br><br>
+            <button>Search</button>
+    </form>
+    
+    <p class="message"><b><font size=2>Showing <%=restaurants.length%> documents (criteria: <%=criteria%>)</font></b></p>
+    <font size="5" color="ff9900"><b>_______________________</b></font><br><br>
+    <font size="5" color="ff9900"><b>Restaurant List</b></font>
+
+
+
+    <ul>
+        <% for(var i = 0; i < restaurants.length; i++){ %>
+            <li><p class="message">
+            <b>
+            <font size=4>
+            <a href="/details?_id=<%=restaurants[i]._id.toString()%>"><%=restaurants[i].name%></a>
+            </font>
+            </b>
+            </p></li><br>
+        <% } %>
+    </ul>
+
+
+    <form action="/create" class="login-form">
+        <button>Create New Restaurant</button>
+    </form>
+
+    </div>
+    </div>
+
+</body>
+</html>

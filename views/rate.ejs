@@ -1,0 +1,30 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rating</title>
+          <link rel="stylesheet" href="css/style3.css">
+</head>
+
+<body>
+
+  <div class="header"><h1 class="header_logo">Restaurant Collections</h1></div>
+  <div class="login-page">
+  <div class="form">
+
+    <form action="/rate" method="post">
+
+    <input name="id" type="hidden" value="<%=id%>"/>
+    <!--redirect from a specific restaurant id-->
+	Input integer(1-10) to rate !<br>
+	<br>
+	Best=10 ~ Worst=1
+	<br><br>
+	<input name="rating" type="number" placeholder="Score" min="1" max="10" required="" />
+	<button>Rate</button>
+
+    </form>
+
+</body>
+
+</html>

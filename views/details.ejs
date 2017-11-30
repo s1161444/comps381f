@@ -1,0 +1,64 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+    <title><%=restaurant.name%></title>
+        <link rel="stylesheet" href="css/style4.css">
+</head>
+
+<body>
+
+  <div class="header"><h1 class="header_logo"><%=restaurant.name%></h1></div>
+  <div class="login-page">
+
+    <% if(restaurant.photo != "") {%>
+    <img src="data:<%=restaurant.minetype%>;base64,<%=restaurant.photo%>"/><br><br>
+    <% } %>
+
+
+     <div class="form">
+        <b>
+        Borough: <%=restaurant.borough%><br><br>
+        Cuisine: <%=restaurant.cuisine%><br><br>
+        Street: <%=restaurant.address.street%><br><br>
+        Building: <%=restaurant.address.building%><br><br>
+        Zipcode: <%=restaurant.address.zipcode%><br><br>
+        GPS: [<%=restaurant.address.coord[0]%>,<%=restaurant.address.coord[1]%>]<br><br>
+        Rating:
+          <ul>
+          <% for(var i = 0; i < restaurant.rating.length; i++){ %>
+             <li><%=i+1%>. <%=restaurant.rating[i].rate%> (<%=restaurant.rating[i].rateBy%>)</li>
+          <% } %>
+          </ul>
+        Created By: <%=restaurant.createBy%><br><br>
+        </b>
+
+          <p class="message"><font size=3>
+
+          <a href="/map?lat=<%=restaurant.address.coord[0]%>&lon=<%=restaurant.address.coord[1]%>&zoom=16&name=<%=restaurant.name%>"><b>LOCATION</b></a>
+            <br><br>
+
+          <a href="/rate?_id=<%=restaurant._id.toString()%>"><b>RATE THIS RESTAURANT</b></a>
+
+           <% if(restaurant.createBy == username){%>
+              <br><br>
+             <a href="/edit?_id=<%=restaurant._id.toString()%>"><b>EDIT INFO</b></a>
+              <br><br>
+             <a href="/delete?_id=<%=restaurant._id.toString()%>"><b>DELETE RECORD</b></a>
+           <% } %>
+              <br><br>
+
+          </font></p>
+
+          <form action="/list" class="login-form"> 
+             <button>Back to Home</button>
+          </form>
+
+
+    </div>
+    </div>
+    
+</body>
+
+</html>
+

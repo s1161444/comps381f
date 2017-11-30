@@ -1,0 +1,36 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Restaurant</title>
+          <link rel="stylesheet" href="css/style2.css">
+
+</head>
+
+<body>
+
+    <div class="header"><h1 class="header_logo">Restaurant Collections</h1></div>
+    <div class="login-page">
+    <div class="form">
+
+    <form action="/edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<%=restaurant._id.toString()%>"/>
+
+    <input name="name" type="text" placeholder="Name" required value="<%=restaurant.name%>">
+    <input name="borough" type="text" placeholder="Borough" required value="<%=restaurant.borough%>">
+    <input name="cuisine" type="text" placeholder="Cuisine" required value="<%=restaurant.cuisine%>">
+    <input name="street" type="text" placeholder="Street" value="<%=restaurant.address.street%>">
+    <input name="building" type="text" placeholder="Building" value="<%=restaurant.address.building%>">
+	  <input name="zipcode" type="text" placeholder="Zipcode" value="<%=restaurant.address.zipcode%>">
+    <input name="lon" type="number" step="0.0000001" placeholder="Longtitude" value="<%=restaurant.address.coord[0]%>">
+    <input name="lat" type="number" step="0.0000001" placeholder="Latitude" value="<%=restaurant.address.coord[1]%>">
+    <input name="imageFile" type="file" accpet="image/*" placeholder="Photo">
+    <button>Edit</button> 
+
+   </form>
+   </div>
+  </div>
+
+</body>
+
+</html>

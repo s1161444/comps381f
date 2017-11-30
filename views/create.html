@@ -1,0 +1,34 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Restaurant</title>
+          <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+
+  <div class="header"><h1 class="header_logo">Restaurant Collections</h1></div>
+  <div class="login-page">
+  <div class="form">
+  
+   <form action="/create" method="post"  enctype="multipart/form-data">
+
+    <input name="name" type="text" placeholder="Name" required>
+    <input name="borough" type="text" placeholder="Borough" required>
+    <input name="cuisine" type="text" placeholder="Cuisine" required>
+    <input name="street" type="text" placeholder="Street">
+    <input name="building" type="text" placeholder="Building">
+    <input name="zipcode" type="text" placeholder="Zipcode">
+    <input name="lon" type="number" step="0.0000001" placeholder="Longtitude">
+    <input name="lat" type="number" step="0.0000001" placeholder="Latitude">
+    <input name="imageFile" type="file" accpet="image/*" placeholder="imageFile">
+    <button>Create</button> 
+
+   </form>
+   </div>
+  </div>
+  
+</body>
+
+</html>
