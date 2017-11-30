@@ -269,9 +269,6 @@ app.get("/details", function(req,res){
 	if(req.session.username == null ){
 			console.log("[*] Session name is null");
 			res.redirect("/invalid");
-	}else if(req.session.username == "Guest"){
-			console.log("[*] Session name is Guest");
-			res.redirect("/invalid");
 	}
 	restaurant.findOne({_id : ObjectId(req.query._id)},function (err, doc) {
 		
